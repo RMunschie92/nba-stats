@@ -39,7 +39,6 @@ router.get('/', (req, res) => {
             templateData.push(player.player);
           }
         });
-        // console.log(templateData);
       }
       return res.render("team", { data: templateData });
     });

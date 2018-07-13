@@ -4,8 +4,8 @@ block content
   - var player = playerData;
   - var stats = playerStats;
   - var minutes = Math.round(parseInt(stats.miscellaneous.minSeconds) / 60);
+  - var minutesPerGame = Math.round(parseInt(stats.miscellaneous.minSecondsPerGame) / 60);
   - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
-  - var PIE = (stats.offense.pts + stats.offense.fgMade + stats.freeThrows.ftMade - stats.freeThrows.ftAtt + (.5 * stats.rebounds.offReb) + stats.offense.ast + stats.defense.stl + (.5 * stats.defense.blk) - stats.miscellaneous.foulsPers - stats.defense.tov) / (stats.offense.ptsPerGame + stats.fieldGoals.fgMadePerGame + stats.freeThrows.ftMadePerGame - stats.fieldGoals.fgAttPergame - stats.freeThrows.ftAttPerGame + stats.rebounds.defRebPerGame + (.5 * stats.rebounds.offRebPerGame) + stats.offense.astPerGame + stats.defense.stlPerGame + (.5 * stats.defense.blkPerGame) - stats.miscellaneous.foulsPersPerGame - stats.defense.tovPerGame);
 
   div.playerBanner
     img(src=player.officialImageSrc)
@@ -18,9 +18,7 @@ block content
           h3.lastName #{player.lastName} 
       div.logoAndTeamName
         img.teamLogo(src=teamLogo)
-        p #{player.position}
-        p |   
-        p #{teamName.toUpperCase()}
+        p #{player.position + ' - ' + teamName.toUpperCase()}  
 
   div.playerInfo 
     div.smallInfo 
@@ -57,10 +55,8 @@ block content
         p AST
         p #{stats.offense.astPerGame}
       div.cell 
-        p PIE
-        p=PIE
-
-    
+        p MIN
+        p=minutesPerGame
 
   div.playerStats
     div.stat

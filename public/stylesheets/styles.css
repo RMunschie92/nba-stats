@@ -181,9 +181,9 @@
 
       .logoAndTeamName {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-content: center;
-        border: 1px solid red;
       }
 
       .teamLogo {
@@ -198,7 +198,7 @@
       .playerInfo {
         display: flex;
         flex-direction: row;
-        margin: 0 1em;
+        margin: 0 1em 3.5em 1em;
       }
 
       .playerInfo p {
