@@ -1,0 +1,128 @@
+extends layout.pug 
+
+block content 
+  - var player = playerData;
+  - var stats = playerStats;
+  - var minutes = Math.round(parseInt(stats.miscellaneous.minSeconds) / 60);
+  - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
+  - var PIE = (stats.offense.pts + stats.offense.fgMade + stats.freeThrows.ftMade - stats.freeThrows.ftAtt + (.5 * stats.rebounds.offReb) + stats.offense.ast + stats.defense.stl + (.5 * stats.defense.blk) - stats.miscellaneous.foulsPers - stats.defense.tov) / (stats.offense.ptsPerGame + stats.fieldGoals.fgMadePerGame + stats.freeThrows.ftMadePerGame - stats.fieldGoals.fgAttPergame - stats.freeThrows.ftAttPerGame + stats.rebounds.defRebPerGame + (.5 * stats.rebounds.offRebPerGame) + stats.offense.astPerGame + stats.defense.stlPerGame + (.5 * stats.defense.blkPerGame) - stats.miscellaneous.foulsPersPerGame - stats.defense.tovPerGame);
+
+  div.playerBanner
+    img(src=player.officialImageSrc)
+
+    div.bannerText
+      div.nameAndNumber
+        h3.jerseyNumber #{'#' + player.jerseyNumber}
+        div.name
+          h3.firstName #{player.firstName} 
+          h3.lastName #{player.lastName} 
+      div.logoAndTeamName
+        img.teamLogo(src=teamLogo)
+        p #{player.position}
+        p |   
+        p #{teamName.toUpperCase()}
+
+  div.playerInfo 
+    div.smallInfo 
+      div.cell
+        p HT 
+        p #{player.height}
+      div.cell
+        p WT 
+        p #{player.weight + ' lbs'}
+      div.cell
+        p AGE 
+        p #{player.age}
+      div.cell
+        p BORN 
+        p=bDay
+    div.largeInfo 
+      div.cell
+        p PRIOR
+        if player.college 
+          p #{player.college + '/' + player.birthCountry} 
+        else 
+          p #{player.birthCountry + '/' + player.birthCountry}
+      div.cell
+        p DRAFT
+        p #{player.drafted.year + ' Rnd ' + player.drafted.round + ' Pick ' + player.drafted.overallPick}
+    div.perGameInfo
+      div.cell 
+        p PTS
+        p #{stats.offense.ptsPerGame}
+      div.cell 
+        p REB
+        p #{stats.rebounds.rebPerGame}
+      div.cell 
+        p AST
+        p #{stats.offense.astPerGame}
+      div.cell 
+        p PIE
+        p=PIE
+
+    
+
+  div.playerStats
+    div.stat
+      p.statAbbrev GP 
+      p.statValue #{stats.gamesPlayed}
+    div.stat
+      p.statAbbrev MIN 
+      p.statValue #{minutes}
+    div.stat
+      p.statAbbrev PTS 
+      p.statValue #{stats.offense.pts}
+    div.stat
+      p.statAbbrev FGM 
+      p.statValue #{stats.fieldGoals.fgMade}
+    div.stat
+      p.statAbbrev FGA 
+      p.statValue #{stats.fieldGoals.fgAtt}
+    div.stat
+      p.statAbbrev FG% 
+      p.statValue #{stats.fieldGoals.fgPct}
+    div.stat
+      p.statAbbrev 3PM 
+      p.statValue #{stats.fieldGoals.fg3PtMade}
+    div.stat
+      p.statAbbrev 3PA 
+      p.statValue #{stats.fieldGoals.fg3PtAtt}
+    div.stat
+      p.statAbbrev 3P% 
+      p.statValue #{stats.fieldGoals.fg3PtPct}
+    div.stat
+      p.statAbbrev FTM 
+      p.statValue #{stats.freeThrows.ftMade}
+    div.stat
+      p.statAbbrev FTA 
+      p.statValue #{stats.freeThrows.ftAtt}
+    div.stat
+      p.statAbbrev FT% 
+      p.statValue #{stats.freeThrows.ftPct} 
+    div.stat
+      p.statAbbrev OREB
+      p.statValue #{stats.rebounds.offReb}
+    div.stat
+      p.statAbbrev DREB
+      p.statValue #{stats.rebounds.defReb}
+    div.stat
+      p.statAbbrev REB
+      p.statValue #{stats.rebounds.reb}
+    div.stat
+      p.statAbbrev AST
+      p.statValue #{stats.offense.ast}
+    div.stat
+      p.statAbbrev TOV
+      p.statValue #{stats.defense.tov}
+    div.stat
+      p.statAbbrev STL
+      p.statValue #{stats.defense.stl}
+    div.stat
+      p.statAbbrev BLK
+      p.statValue #{stats.defense.blk}
+    div.stat
+      p.statAbbrev PF
+      p.statValue #{stats.miscellaneous.fouls}
+    div.stat
+      p.statAbbrev +/-
+      p.statValue #{stats.miscellaneous.plusMinus}

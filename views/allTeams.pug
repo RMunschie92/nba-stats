@@ -1,0 +1,9 @@
+extends layout.pug 
+
+block content 
+  ul(class='teamList')
+    each team in teamData
+      li(class="teamListItem") 
+        - var url = team.image; 
+        img.logoSmall(src=url)
+        p #{team.city + ' ' + team.name}

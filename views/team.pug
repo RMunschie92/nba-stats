@@ -1,0 +1,58 @@
+extends layout.pug
+
+block content 
+  div.teamBanner
+    div.teamInfo
+      img.logoMedium(src="https://res.cloudinary.com/munsch-creative/image/upload/v1530592566/celtics_fsbgjf.png")
+      div.teamName
+        h2 BOSTON
+        h1 CELTICS
+
+    div.teamStats 
+      div.stat
+        p.statAbbrev PPG
+        p.statValue x
+      div.stat
+        p.statAbbrev RPG
+        p.statValue x
+      div.stat
+        p.statAbbrev APG
+        p.statValue x
+      div.stat
+        p.statAbbrev OPG
+        p.statValue x
+      div.stat
+        p.statAbbrev RECORD
+        p.statValue x
+      div.stat
+        p.statAbbrev EASTERN CONF.
+        p.statValue x
+      div.stat
+        p.statAbbrev SOUTHWEST DIV.
+        p.statValue x
+
+  p Team Roster
+  div.labels 
+    p player
+    p no. 
+    p pos 
+    p height 
+    p weight 
+    p birthdate 
+    p age 
+    p school
+  div.roster
+    each player in data 
+      div.playerCell
+        - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
+        - var fullName = player.firstName + ' ' + player.lastName
+        - var queryName = player.firstName.toLowerCase() + '-' + player.lastName.toLowerCase();
+        - var photoUrl = player.officialImageSrc;
+        a(id='rosterName' href='/api/player/' + queryName)=fullName
+        p #{'#' + player.jerseyNumber}
+        p= player.position
+        p= player.height 
+        p= player.weight 
+        p= bDay
+        p= player.age 
+        p= player.college

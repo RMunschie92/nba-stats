@@ -1,0 +1,24 @@
+{
+  "name": "nba_stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "mysportsfeeds-node": "^1.0.0",
+    "nodemon": "^1.17.5",
+    "pug": "^2.0.3",
+    "request": "^2.87.0",
+    "sass": "^1.9.0"
+  }
+}
