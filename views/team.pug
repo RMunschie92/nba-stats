@@ -1,35 +1,40 @@
 extends layout.pug
 
 block content 
+  -var stats = teamStats;
+  -var winPct = stats.standings.winPct.toString().substring(1);
+  -var conference = team.conference.toUpperCase();
+  -var division = team.division.toUpperCase();
+
   div.teamBanner
     div.teamInfo
-      img.logoMedium(src="https://res.cloudinary.com/munsch-creative/image/upload/v1530592566/celtics_fsbgjf.png")
+      img.logoMedium(src=team.image)
       div.teamName
-        h2 BOSTON
-        h1 CELTICS
+        h2 #{team.city}
+        h1 #{team.name}
 
     div.teamStats 
       div.stat
         p.statAbbrev PPG
-        p.statValue x
+        p.statValue #{stats.offense.ptsPerGame}
       div.stat
         p.statAbbrev RPG
-        p.statValue x
+        p.statValue #{stats.rebounds.rebPerGame}
       div.stat
         p.statAbbrev APG
-        p.statValue x
+        p.statValue #{stats.offense.astPerGame}
       div.stat
         p.statAbbrev OPG
-        p.statValue x
+        p.statValue #{stats.defense.ptsAgainstPerGame}
       div.stat
         p.statAbbrev RECORD
-        p.statValue x
+        p.statValue #{stats.standings.wins + ' - ' + stats.standings.losses + ' (' + winPct + ')'}
       div.stat
-        p.statAbbrev EASTERN CONF.
-        p.statValue x
+        p.statAbbrev #{conference + ' ' + 'CONF.'} 
+        p.statValue CONFERENCE STANDING
       div.stat
-        p.statAbbrev SOUTHWEST DIV.
-        p.statValue x
+        p.statAbbrev #{division + ' ' + 'DIV.'}
+        p.statValue DIVISION STANDING
 
   p Team Roster
   div.labels 
@@ -42,7 +47,8 @@ block content
     p age 
     p school
   div.roster
-    each player in data 
+    each player in roster 
+      if player.jerseyNumber !== null
       div.playerCell
         - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
         - var fullName = player.firstName + ' ' + player.lastName

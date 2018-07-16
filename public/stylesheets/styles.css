@@ -1,6 +1,21 @@
 .header {
-  font-size: 1.85em;
+  font-size: 1.5em;
   text-align: center;
+}
+
+div.nav {
+  display: flex;
+  /* background: #d6d6d6; */
+  background: #f3f4f5;
+}
+
+.teamsLink {
+  margin-left: 1.25em;
+  text-decoration: none;
+}
+
+.teamsLink:visited {
+  color: #000;
 }
 
 /************************
@@ -131,7 +146,7 @@
 
     .playerCell:nth-child(even) {
       background: #f3f4f5;
-      background: #d6d6d6;
+      /* background: #d6d6d6; */
     } 
 
     .playerCell * {
