@@ -46,18 +46,22 @@ router.get("/:name", (req, res) => {
         }
         let playerStats = responses[0].playerStatsTotals[0].stats;
         let playerData = responses[1].players[0].player;
+
         // get team name to send to view
         teamList.map(team => {
           if (team.abbreviation == playerData.currentTeam.abbreviation.toLowerCase()) {
+            teamData = team;
             teamName = team.city + ' ' + team.name;
             teamLogo = team.image;
           }
         })
+
+        console.log(teamData);
+
         return res.render("player", {
           playerStats: playerStats,
           playerData: playerData,
-          teamName: teamName,
-          teamLogo: teamLogo
+          teamData: teamData,
         });
       }
     })

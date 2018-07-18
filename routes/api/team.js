@@ -13,8 +13,8 @@ const apiKey = "73a08190-f41f-4bda-becd-af5c5a";
 router.get('/:teamName', (req, res) => {
   let urls = [
     `https://api.mysportsfeeds.com/v2.0/pull/nba/players.json?date=${date}&team=${req.params.teamName}`, 
-    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/team_stats_totals.json?team=${req.params.teamName}`
-    // `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json`
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/team_stats_totals.json?team=${req.params.teamName}`,
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json?team=${req.params.teamName}`
   ];
   let auth = "Basic " + Buffer.from(apiKey + ":" + password).toString("base64");
   let completedRequests = 0;
@@ -47,16 +47,24 @@ router.get('/:teamName', (req, res) => {
       // when both requests are complete
       if (completedRequests == urls.length) {
 
-        console.log(responses);
+        let completedData = [];
 
-        // reverse responses array if players is 0 index
-
-        if (responses[0].hasOwnProperty('players')) {
-          responses = responses.reverse();
+        // loop through responses and push indices to completeData accordingly
+        for (let i = 0; i < responses.length; i++) {
+          if (responses[i].hasOwnProperty('teamStatsTotals')) {
+            completedData[0] = responses[i];
+          }
+          else if (responses[i].hasOwnProperty('players')) {
+            completedData[1] = responses[i]
+          }
+          else {
+            completedData[2] = responses[i]
+          }
         }
-        let teamStats = responses[0].teamStatsTotals[0].stats;
-        console.log(teamStats)
-        let rawData = responses[1].players;
+
+        let teamStats = completedData[0].teamStatsTotals[0].stats;
+        let rawRosterData = completedData[1].players;
+        let teamStandings = completedData[2].teams[0];
 
         // set teamData
         teamList.map(team => {
@@ -66,15 +74,16 @@ router.get('/:teamName', (req, res) => {
         });
 
         // push each player object into templateData if it has a jerseyNumber
-        rawData.map(player => {
+        rawRosterData.map(player => {
           if (player.player.jerseyNumber !== null) {
             roster.push(player.player);
           }
         });
 
         return res.render("team", {
-          roster: roster,
           teamStats: teamStats,
+          roster: roster,
+          standings: teamStandings,
           team: teamData
         });
       }      

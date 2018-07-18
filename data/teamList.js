@@ -6,7 +6,8 @@ const teamData = [
     city: "Atlanta",
     name: "Hawks",
     conference: "Eastern",
-    division: "Southeast"
+    division: "Southeast",
+    established: "1949"
   },
   {
     image:
@@ -15,7 +16,8 @@ const teamData = [
     city: "Boston",
     name: "Celtics",
     conference: "Eastern",
-    division: "Atlantic"
+    division: "Atlantic",
+    established: "1946"
   },
   {
     image:
@@ -24,7 +26,8 @@ const teamData = [
     city: "Brooklyn",
     name: "Nets",
     conference: "Eastern",
-    division: "Atlantic"
+    division: "Atlantic",
+    established: "1976"
   },
   {
     image:
@@ -32,8 +35,9 @@ const teamData = [
     abbreviation: "cha",
     city: "Charlotte",
     name: "Hornets",
-    conference: "Southeast",
-    division: "Eastern"
+    conference: "Eastern",
+    division: "Southeast",
+    established: "1988"
   },
   {
     image:
@@ -41,8 +45,9 @@ const teamData = [
     abbreviation: "chi",
     city: "Chicago",
     name: "Bulls",
-    conference: "Central",
-    division: "Eastern"
+    conference: "Eastern",
+    division: "Central",
+    established: "1966"
   },
   {
     image:
@@ -50,8 +55,9 @@ const teamData = [
     abbreviation: "cle",
     city: "Cleveland",
     name: "Cavaliers",
-    conference: "Central",
-    division: "Eastern"
+    conference: "Eastern",
+    division: "Central",
+    established: "1970"
   },
   {
     image:
@@ -59,17 +65,19 @@ const teamData = [
     abbreviation: "dal",
     city: "Dallas",
     name: "Mavericks",
-    conference: "Southwest",
-    division: "Western"
+    conference: "Western",
+    division: "Southwest",
+    established: "1980"
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596746/denver_kzhyyy.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531887480/new_denver_nuggets_logo_cb43ec.png",
     abbreviation: "den",
     city: "Denver",
     name: "Nuggets",
-    conference: "NOrthwest",
-    division: "Western"
+    conference: "Western",
+    division: "Northwest",
+    established: "1976"
   },
   {
     image:
@@ -77,8 +85,9 @@ const teamData = [
     abbreviation: "det",
     city: "Detroit",
     name: "Pistons",
-    conference: "Central",
-    division: "Eastern"
+    conference: "Eastern",
+    division: "Central",
+    established: "1948"
   },
   {
     image:
@@ -87,15 +96,18 @@ const teamData = [
     city: "Golden State",
     name: "Warriors",
     conference: "Western",
-    division: "Pacific"
+    division: "Pacific",
+    established: "1946"
   },
   {
-    image: "https://www.vexels.com/vectors/preview/131100/houston-rockets-logo",
+    image:
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531888009/houston-rockets-logo_kavwl5.png",
     abbreviation: "hou",
     city: "Houston",
     name: "Rockets",
     conference: "Western",
-    division: "Southwest"
+    division: "Southwest",
+    established: "1967"
   },
   {
     image:
@@ -103,17 +115,19 @@ const teamData = [
     abbreviation: "ind",
     city: "Indiana",
     name: "Pacers",
-    conference: "Central",
-    division: "Eastern"
+    conference: "Eastern",
+    division: "Central",
+    established: "1976"
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596725/la_mo9qfh.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531887557/new_clippers_logo_bs3pam.png",
     abbreviation: "lac",
     city: "LA",
     name: "Clippers",
     conference: "Western",
-    division: "Pacific"
+    division: "Pacific",
+    established: "1970"
   },
   {
     image:
@@ -122,7 +136,8 @@ const teamData = [
     city: "Los Angeles",
     name: "Lakers",
     conference: "Western",
-    division: "Pacific"
+    division: "Pacific",
+    established: "1948"
   },
   {
     image:
@@ -131,15 +146,18 @@ const teamData = [
     city: "Memphis",
     name: "Grizzlies",
     conference: "Western",
-    division: "Southwest"
+    division: "Southwest",
+    established: "1995"
   },
   {
-    image: "https://www.vexels.com/vectors/preview/131475/miami-heat-logo",
+    image:
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531888149/miami-heat-logo-transparent_t9nadr.png",
     abbreviation: "mia",
     city: "Miami",
     name: "Heat",
     conference: "Eastern",
-    division: "Southeast"
+    division: "Southeast",
+    established: "1988"
   },
   {
     image:
@@ -148,7 +166,8 @@ const teamData = [
     city: "Milwaukee",
     name: "Bucks",
     conference: "Eastern",
-    division: "Central"
+    division: "Central",
+    established: "1968"
   },
   {
     image:
@@ -157,7 +176,8 @@ const teamData = [
     city: "Minnesota",
     name: "Timberwolves",
     conference: "Western",
-    division: "Northwest"
+    division: "Northwest",
+    established: "1989"
   },
   {
     image:
@@ -166,7 +186,8 @@ const teamData = [
     city: "New Orleans",
     name: "Pelicans",
     conference: "Western",
-    division: "Southwest"
+    division: "Southwest",
+    established: "2002"
   },
   {
     image:
@@ -175,7 +196,8 @@ const teamData = [
     city: "New York",
     name: "Knicks",
     conference: "Eastern",
-    division: "Atlantic"
+    division: "Atlantic",
+    established: "1946"
   },
   {
     image:
@@ -184,7 +206,8 @@ const teamData = [
     city: "Oklahoma City",
     name: "Thunder",
     conference: "Western",
-    division: "Northwest"
+    division: "Northwest",
+    established: "1967"
   },
   {
     image:
@@ -193,7 +216,8 @@ const teamData = [
     city: "Orlando",
     name: "Magic",
     conference: "Eastern",
-    division: "Southeast"
+    division: "Southeast",
+    established: "1989"
   },
   {
     image:
@@ -202,7 +226,8 @@ const teamData = [
     city: "Philadelphia",
     name: "76ers",
     conference: "Eastern",
-    division: "Atlantic"
+    division: "Atlantic",
+    established: "1949"
   },
   {
     image:
@@ -211,16 +236,18 @@ const teamData = [
     city: "Phoenix",
     name: "Suns",
     conference: "Western",
-    division: "Pacific"
+    division: "Pacific",
+    established: "1968"
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596722/portland_fpobjz.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531888663/trailblazers_logo_shuasw.png",
     abbreviation: "por",
     city: "Portland",
     name: "Trailblazers",
     conference: "Western",
-    division: "Northwest"
+    division: "Northwest",
+    established: "1970"
   },
   {
     image:
@@ -229,7 +256,8 @@ const teamData = [
     city: "Sacramento",
     name: "Kings",
     conference: "Western",
-    division: "Pacific"
+    division: "Pacific",
+    established: "1948"
   },
   {
     image:
@@ -238,7 +266,8 @@ const teamData = [
     city: "San Antonio",
     name: "Spurs",
     conference: "Western",
-    division: "Southwest"
+    division: "Southwest",
+    established: "1976"
   },
   {
     image:
@@ -247,16 +276,18 @@ const teamData = [
     city: "Toronto",
     name: "Raptors",
     conference: "Eastern",
-    division: "Atlantic"
+    division: "Atlantic",
+    established: "1995"
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596723/utah_gzhrwy.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1531889039/utah_jazz_logo_zrwfri.png",
     abbreviation: "uta",
     city: "Utah",
     name: "Jazz",
     conference: "Western",
-    division: "Northwest"
+    division: "Northwest",
+    established: "1974"
   },
   {
     image:
@@ -265,7 +296,8 @@ const teamData = [
     city: "Washington",
     name: "Wizards",
     conference: "Eastern",
-    division: "Southeast"
+    division: "Southeast",
+    established: "1961"
   }
 ];    
 
