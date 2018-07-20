@@ -10,11 +10,11 @@ const date = moment().format('YYYY/MM/DD').replace(/\//g,'');
 const password = "MYSPORTSFEEDS";
 const apiKey = "73a08190-f41f-4bda-becd-af5c5a";
 
-router.get('/:teamName', (req, res) => {
+router.get('/:id', (req, res) => {
   let urls = [
-    `https://api.mysportsfeeds.com/v2.0/pull/nba/players.json?date=${date}&team=${req.params.teamName}`, 
-    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/team_stats_totals.json?team=${req.params.teamName}`,
-    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json?team=${req.params.teamName}`
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/players.json?date=${date}&team=${req.params.id}`, 
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/team_stats_totals.json?team=${req.params.id}`,
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json?team=${req.params.id}`
   ];
   let auth = "Basic " + Buffer.from(apiKey + ":" + password).toString("base64");
   let completedRequests = 0;
@@ -49,7 +49,7 @@ router.get('/:teamName', (req, res) => {
 
         let completedData = [];
 
-        // loop through responses and push indices to completeData accordingly
+        // loop through responses and push indices to completedData accordingly
         for (let i = 0; i < responses.length; i++) {
           if (responses[i].hasOwnProperty('teamStatsTotals')) {
             completedData[0] = responses[i];
@@ -68,7 +68,7 @@ router.get('/:teamName', (req, res) => {
 
         // set teamData
         teamList.map(team => {
-          if (team.abbreviation == req.params.teamName.toLowerCase()) {
+          if (team.id == req.params.id) {
             teamData = team;
           }
         });

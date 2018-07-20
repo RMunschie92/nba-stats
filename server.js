@@ -6,6 +6,7 @@ const teamData = require("./data/teamList.js");
 const allTeamsRoute = require('./routes/api/allTeams');
 const teamRoute = require('./routes/api/team');
 const playerRoute = require('./routes/api/player');
+const playersRoute = require('./routes/api/players');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/static', express.static("public"));
 app.use("/api/player", playerRoute);
 app.use("/api/allTeams", allTeamsRoute);
 app.use("/api/team", teamRoute);
+app.use("/api/players", playersRoute);
 
 app.get('/', (req, res) => {
   res.render('index');

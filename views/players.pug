@@ -1,0 +1,123 @@
+extends layout.pug
+
+block content 
+
+  h2.playersHeader Season Leaders
+  div.listsContainer
+
+    div.listSection
+      h3 Total Points
+      ol.playersList
+        each player, index in ptsTotals.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.offense.pts}
+
+    div.listSection
+      h3 Points Per Game
+      ol.playersList 
+        each player, index in ptsPerGame.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.offense.ptsPerGame}
+
+    div.listSection
+      h3 Rebounds Per Game
+      ol.playersList
+        each player, index in reboundsPerGame.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.rebounds.rebPerGame}
+    
+    div.listSection
+      h3 Assists Per Game
+      ol.playersList
+        each player, index in astPerGame.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.offense.astPerGame}
+    
+    div.listSection
+      h3 Blocks Per Game
+      ol.playersList
+        each player, index in blkPerGame.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.defense.blkPerGame}
+
+    div.listSection
+      h3 Steals Per Game
+      ol.playersList
+        each player, index in stlPerGame.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.defense.stlPerGame}
+
+    div.listSection
+      h3 Field Goal Percentage
+      ol.playersList
+        each player, index in fieldGoalPct.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.fieldGoals.fgPct}
+
+    div.listSection
+      h3 Three Pointers Made
+      ol.playersList
+        each player, index in threePtMade.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.fieldGoals.fg3PtMade}
+
+    div.listSection
+      h3 Three Point Percentage
+      ol.playersList
+        each player, index in threePtPct.slice(0, 10)
+          - var fullName = player.player.firstName + ' ' + player.player.lastName;
+          li.playersCell 
+            div.nameAndTeam
+              p.rank #{index + 1 + '.'}
+              a(class='leaderName' href='/api/player/' + player.player.id)=fullName
+              p.rankAbbrev #{player.team.abbreviation}
+            div.listValue
+              p #{player.stats.fieldGoals.fg3PtPct}

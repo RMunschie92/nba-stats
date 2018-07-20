@@ -55,12 +55,11 @@ block content
         div.playerCell
           - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
           - var fullName = player.firstName + ' ' + player.lastName
-          - var queryName = player.firstName.toLowerCase() + '-' + player.lastName.toLowerCase();
           - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
           if player.college
             - var college = player.college.split(' ').filter(word => !trimWords.includes(word)).join(' ');
 
-          a(class='rosterName' href='/api/player/' + queryName)=fullName
+          a(class='rosterName' href='/api/player/' + player.id)=fullName
           p #{'#' + player.jerseyNumber}
           p= player.position
           p= player.height 

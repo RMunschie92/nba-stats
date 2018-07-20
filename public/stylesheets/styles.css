@@ -1,5 +1,9 @@
 body {
   font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* justify-content: space-evenly; */
 }
 
 a:hover {
@@ -13,20 +17,35 @@ a:hover {
 .nav {
   display: flex;
   background: #f3f4f5;
+  margin-bottom: 2em;
 }
 
 .nav a {
   font-size: 1.25em;
   padding: .85em .5em;
+  text-decoration: none;
 }
 
 .teamsLink {
   margin-left: 1.25em;
-  text-decoration: none;
 }
 
-.teamsLink:visited {
+.nav a:visited {
   color: #000;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  margin-left: .25em;
 }
 
 /************************
@@ -87,6 +106,80 @@ a:hover {
   height: 40px;
 }
 
+/************************
+    /PLAYERS STYLES 
+************************/
+
+  .playersHeader {
+    margin-left: 2em;
+  }
+
+  .listsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 1em;
+  }
+
+  .listSection {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 2.5em;
+  }
+
+  .listSection h3 {
+    border-bottom: 1px solid #63737b;
+    padding-bottom: .75em;
+    margin-bottom: 0;
+  }
+
+  .playersList {
+    margin-top: .5em;
+    padding: 0;
+    width: 90%;
+  }
+
+  .playersCell:first-child .listValue {
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+
+  .playersCell {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nameAndTeam {
+    display: flex;
+    align-items: center;
+    margin-left: .5em;
+    width: 75%;
+    color: #333;
+  }
+
+  .leaderName {
+    text-decoration: none;
+    margin-left: .5em;
+    color: #333;
+  }
+
+  .leaderName:hover {
+    color: #1570b5;
+    text-decoration: none;
+  }
+
+  .rankAbbrev {
+    margin-left: .75em;
+    color: #63737b;
+    font-size: .85em;
+    font-weight: 300;
+  }
+
+  .listValue {
+    color: #000;
+  }
 
 /************************
     /TEAM STYLES 
