@@ -6,67 +6,68 @@ block content
   -var conference = team.conference.toUpperCase();
   -var division = team.division.toUpperCase();
 
-  div.teamBanner
-    div.teamInfo
-      img.logoMedium(src=team.image)
-      div.teamName
-        h2 #{team.city}
-        h1 #{team.name}
-      h3.established #{'Established ' + team.established}
+  div.siteContent
+    div.teamBanner
+      div.teamInfo
+        img.logoMedium(src=team.image)
+        div.teamName
+          h2 #{team.city}
+          h1 #{team.name}
+        h3.established #{'Established ' + team.established}
 
-    div.teamStats 
-      div.stat
-        p.statAbbrev PPG
-        p.statValue #{stats.offense.ptsPerGame}
-      div.stat
-        p.statAbbrev RPG
-        p.statValue #{stats.rebounds.rebPerGame}
-      div.stat
-        p.statAbbrev APG
-        p.statValue #{stats.offense.astPerGame}
-      div.stat
-        p.statAbbrev OPG
-        p.statValue #{stats.defense.ptsAgainstPerGame}
-      div.stat
-        p.statAbbrev RECORD
-        p.statValue #{stats.standings.wins + ' - ' + stats.standings.losses + ' (' + winPct + ')'}
-      div.stat
-        p.statAbbrev #{conference + ' ' + 'CONF.'} 
-        p.statValue #{'Rank #' + standings.conferenceRank.rank}
-      div.stat
-        p.statAbbrev #{division + ' ' + 'DIV.'}
-        p.statValue #{'Rank #' + standings.divisionRank.rank}
+      div.teamStats 
+        div.stat
+          p.statAbbrev PPG
+          p.statValue #{stats.offense.ptsPerGame}
+        div.stat
+          p.statAbbrev RPG
+          p.statValue #{stats.rebounds.rebPerGame}
+        div.stat
+          p.statAbbrev APG
+          p.statValue #{stats.offense.astPerGame}
+        div.stat
+          p.statAbbrev OPG
+          p.statValue #{stats.defense.ptsAgainstPerGame}
+        div.stat
+          p.statAbbrev RECORD
+          p.statValue #{stats.standings.wins + ' - ' + stats.standings.losses + ' (' + winPct + ')'}
+        div.stat
+          p.statAbbrev #{conference + ' ' + 'CONF.'} 
+          p.statValue #{'Rank #' + standings.conferenceRank.rank}
+        div.stat
+          p.statAbbrev #{division + ' ' + 'DIV.'}
+          p.statValue #{'Rank #' + standings.divisionRank.rank}
 
-  div.rosterSection
-    div.rosterHeader 
-      p Team Roster
-    div.labels 
-      p player
-      p no. 
-      p pos 
-      p height 
-      p weight 
-      p birthdate 
-      p age 
-      p school
-    div.rosterMain
-      each player in roster 
-        if player.jerseyNumber !== null
-        div.playerCell
-          - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
-          - var fullName = player.firstName + ' ' + player.lastName
-          - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
-          if player.college
-            - var college = player.college.split(' ').filter(word => !trimWords.includes(word)).join(' ');
+    div.rosterSection
+      div.rosterHeader 
+        p Team Roster
+      div.labels 
+        p player
+        p no. 
+        p pos 
+        p height 
+        p weight 
+        p birthdate 
+        p age 
+        p school
+      div.rosterMain
+        each player in roster 
+          if player.jerseyNumber !== null
+          div.playerCell
+            - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
+            - var fullName = player.firstName + ' ' + player.lastName
+            - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
+            if player.college
+              - var college = player.college.split(' ').filter(word => !trimWords.includes(word)).join(' ');
 
-          a(class='rosterName' href='/api/player/' + player.id)=fullName
-          p #{'#' + player.jerseyNumber}
-          p= player.position
-          p= player.height 
-          p= player.weight 
-          p= bDay
-          p= player.age 
-          if player.college 
-            p.rosterCollege=college
-          else 
-            p= player.college
+            a(class='rosterName' href='/api/player/' + player.id)=fullName
+            p #{'#' + player.jerseyNumber}
+            p= player.position
+            p= player.height 
+            p= player.weight 
+            p= bDay
+            p= player.age 
+            if player.college 
+              p.rosterCollege=college
+            else 
+              p= player.college

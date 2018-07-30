@@ -23,7 +23,7 @@ const teamData = [
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596747/brooklyn_nxrt0p.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1532982794/brooklyn_wupuzj.png",
     abbreviation: "bkn",
     id: 84,
     city: "Brooklyn",
@@ -188,7 +188,7 @@ const teamData = [
   },
   {
     image:
-      "https://res.cloudinary.com/munsch-creative/image/upload/v1530596723/minnesota_dlbbt3.png",
+      "https://res.cloudinary.com/munsch-creative/image/upload/v1532984731/minnesota_baj07r.png",
     abbreviation: "min",
     id: 100,
     city: "Minnesota",

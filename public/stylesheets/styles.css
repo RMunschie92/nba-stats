@@ -2,8 +2,11 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* justify-content: space-evenly; */
+  min-height: 100vh;
+}
+
+.siteContent {
+  flex: 1;
 }
 
 a:hover {
@@ -193,7 +196,7 @@ a:hover {
       width: 100%;
       display: flex;
       flex-direction: column;
-      background: #032f4f;
+      background: rgb(3,47,79, 0.9);
     }
 
     .teamInfo {
@@ -213,6 +216,7 @@ a:hover {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-left: 1em;
       color: #fff;
     }
 
@@ -237,6 +241,7 @@ a:hover {
     .teamStats {
       display: flex;
       width: 100%;
+      background: #032f4f;
     }
 
     .teamStats .stat{
@@ -374,9 +379,13 @@ a:hover {
       .playerBanner {
         display: flex;
         margin: 0 1em;
+        background: rgb(3,47,79, 0.9);
+        border: 1px solid #fff;
+        box-sizing: border-box;
       }
 
       .bannerText {
+        color: #fff; 
         width: 250px;
         align-self: center;
       }
@@ -387,13 +396,18 @@ a:hover {
         align-content: center;
       }
 
+      .nameAndNumber h3 {
+        font-weight: 300;
+      }
+
       .jerseyNumber {
-        font-size: 3em;
+        font-size: 3.15em;
         margin: 0 .25em 0 0;
       }
 
       .name {
         align-self: center;
+        font-size: 1.15em;
       }
 
       .name * {
@@ -414,12 +428,12 @@ a:hover {
 
       .teamLink {
         align-self: center;
-        color: #000;
+        color: #fff;
         text-decoration: none;
       }
 
       .teamLink:visited {
-        color: #000;
+        color: #fff;
       }
 
     /************************
@@ -433,50 +447,50 @@ a:hover {
       }
 
       .playerInfo p {
-        margin: 0.25em;;
+        margin: 0.25em;
       }
 
-      .smallInfo, .largeInfo, .perGameInfo {
+      .generalInfo, .pastInfo, .perGameInfo {
         display: flex;
         background: #032f4f;
         color: #fff;
       }
 
-      .smallInfo {
+      .generalInfo {
         display: flex;
         flex: 1;
         flex-wrap: wrap;
       }
 
-      .smallInfo .cell {
+      .generalInfo .cell {
         display: flex;
         width: 50%;
         border: 1px solid #fff;
         box-sizing: border-box;
       }
 
-      .largeInfo {
+      .pastInfo {
         display: flex;
         flex: 1;
         flex-direction: column;
       }
 
-      .largeInfo .cell {
+      .pastInfo .cell {
         flex: 1;
         display: flex;
         border: 1px solid #fff;
         box-sizing: border-box;
       }
 
-      .smallInfo .cell, .largeInfo .cell {
+      .generalInfo .cell, .pastInfo .cell {
         flex-direction: column;
       }
 
-      .smallInfo .cell p:first-child, .largeInfo .cell p:first-child, .perGameInfo .cell p:first-child {
+      .generalInfo .cell p:first-child, .pastInfo .cell p:first-child, .perGameInfo .cell p:first-child {
         font-size: .75em;
       }
 
-      .smallInfo .cell p:last-child, .largeInfo .cell p:last-child {
+      .generalInfo .cell p:nth-child(2), .pastInfo .cell p:nth-child(2) {
         text-align: center;
       }
 
@@ -535,3 +549,62 @@ a:hover {
         text-align: center;
       }
 
+/************************
+    MEDIA QUERIES
+************************/
+
+@media screen and (max-width: 760px) {
+
+  .playerInfo {
+    flex-direction: column;
+  }
+
+  .perGameInfo {
+    order: 1;
+    background: #00233b;
+  }
+
+  .generalInfo {
+    order: 2;
+  }
+
+  .generalInfo .cell {
+    width: 25%;
+  }
+
+  .pastInfo {
+    display: flex;
+    flex-direction: row;
+    order: 3;
+  }
+
+  .pastInfo .cell {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 560px) {
+
+  .playerImage {
+    width: 195px;
+    height: 143px;
+  }
+
+  .logoAndTeamName {
+    font-size: .85em;
+  }
+
+  .teamLogo {
+    display: none;
+  }
+
+  .jerseyNumber {
+    font-size: 3em;
+  }
+
+  .name {
+    font-size: 1em;
+  }
+  
+}
