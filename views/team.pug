@@ -38,36 +38,38 @@ block content
           p.statAbbrev #{division + ' ' + 'DIV.'}
           p.statValue #{'Rank #' + standings.divisionRank.rank}
 
+
     div.rosterSection
       div.rosterHeader 
         p Team Roster
-      div.labels 
-        p player
-        p no. 
-        p pos 
-        p height 
-        p weight 
-        p birthdate 
-        p age 
-        p school
-      div.rosterMain
+      table 
+        tr.labels 
+          th player
+          th no.
+          th pos
+          th height
+          th weight
+          th birthdate
+          th age 
+          th school
         each player in roster 
-          if player.jerseyNumber !== null
-          div.playerCell
+          if player.jerseyNumber !== null 
             - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
             - var fullName = player.firstName + ' ' + player.lastName
             - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
             if player.college
               - var college = player.college.split(' ').filter(word => !trimWords.includes(word)).join(' ');
+            tr.playerCell 
+              td
+                a(class='rosterName' href='/api/player/' + player.id)=fullName
+              td #{'#' + player.jerseyNumber}
+              td= player.position
+              td= player.height 
+              td= player.weight 
+              td= bDay
+              td= player.age 
+              if player.college 
+                td.rosterCollege=college
+              else 
+                td= player.college
 
-            a(class='rosterName' href='/api/player/' + player.id)=fullName
-            p #{'#' + player.jerseyNumber}
-            p= player.position
-            p= player.height 
-            p= player.weight 
-            p= bDay
-            p= player.age 
-            if player.college 
-              p.rosterCollege=college
-            else 
-              p= player.college

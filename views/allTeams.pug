@@ -2,78 +2,83 @@ extends layout.pug
 
 block content 
   div(class='teamList siteContent')
-    div.easternConf
 
-      div.atlanticList
-        h3 Atlantic
-        ul
-          each team in teamData
-            if team.division === 'Atlantic'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
-      
-      div.centralList
-        h3 Central
-        ul
-          each team in teamData
-            if team.division === 'Central'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
+    div.easternConfContainer
+      h2.confName Eastern Conference
 
-      div.southeastList
-        h3 Southeast
-        ul
-          each team in teamData
-            if team.division === 'Southeast'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
+      div.easternConfTeams
+        div.atlanticList
+          h3 Atlantic
+          ul
+            each team in teamData
+              if team.division === 'Atlantic'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName
+        
+        div.centralList
+          h3 Central
+          ul
+            each team in teamData
+              if team.division === 'Central'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName
 
-    div.westernConf
+        div.southeastList
+          h3 Southeast
+          ul
+            each team in teamData
+              if team.division === 'Southeast'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName
 
-      div.northwestList
-        h3 Northwest
-        ul
-          each team in teamData
-            if team.division === 'Northwest'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
+    div.westernConfContainer
+      h2.confName Western Conference
 
-      div.pacificList
-        h3 Pacific
-        ul
-          each team in teamData
-            if team.division === 'Pacific'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
+      div.westernConfTeams
+        div.northwestList
+          h3 Northwest
+          ul
+            each team in teamData
+              if team.division === 'Northwest'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName
 
-      div.southwestList
-        h3 Southwest
-        ul
-          each team in teamData
-            if team.division === 'Southwest'
-              li(class="teamListItem") 
-                - var url = team.image; 
-                - var teamName = team.city + ' ' + team.name;
-                a(href='/api/team/' + team.id)
-                  img.logoSmall(src=url)
-                  =teamName
+        div.pacificList
+          h3 Pacific
+          ul
+            each team in teamData
+              if team.division === 'Pacific'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName
+
+        div.southwestList
+          h3 Southwest
+          ul
+            each team in teamData
+              if team.division === 'Southwest'
+                li(class="teamListItem") 
+                  - var url = team.image; 
+                  - var teamName = team.city + ' ' + team.name;
+                  a(href='/api/team/' + team.id)
+                    img.logoSmall(src=url)
+                    =teamName

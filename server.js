@@ -27,7 +27,7 @@ app.use("/api/team", teamRoute);
 app.use("/api/players", playersRoute);
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.redirect('/api/allTeams');
 })
 
 app.listen(3000, () => console.log('NBA Stats listening on port 3000! :)'));

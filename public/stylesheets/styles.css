@@ -60,10 +60,25 @@ a:hover {
   flex-direction: column;
 }
 
-.easternConf div, .westernConf div {
+.easternConfContainer, .westernConfContainer {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  justify-content: center;
+  width: 100%;
+}
+
+.westernConfContainer {
+  margin-bottom: 2em;
+}
+
+.confName {
+    margin-left: 1em;
+  }
+
+.easternConfTeams, .westernConfTeams {
+  margin: 0 1em;
+  display: flex;
+  justify-content: space-around;
 }
 
 .teamList h3 {
@@ -73,12 +88,6 @@ a:hover {
 .teamList ul {
   list-style: none;
   padding: 0;
-}
-
-.easternConf, .westernConf {
-  display: flex;
-  justify-content: center;
-  width: 100%;
 }
 
 .teamListItem {
@@ -127,6 +136,7 @@ a:hover {
   .listSection {
     display: flex;
     flex-direction: column;
+    min-width: 300px;
     width: 25%;
     margin: 0 2.5em;
   }
@@ -277,12 +287,17 @@ a:hover {
     .rosterSection {
       display: flex;
       flex-direction: column;
-      overflow-x: scroll; 
       margin: 3em 1.5em 2em 1.5em;
+      overflow-x: scroll;
+    }
+
+    .rosterSection table {
+      min-width: 725px;
     }
 
     .rosterHeader {
       display: flex;
+      min-width: 725px;
       font-size: 1.25em;
       background: #006bb6;
     }
@@ -295,30 +310,27 @@ a:hover {
     .labels {
       display: flex;
       flex-direction: row;
+      flex: 1;
+      width: 100%;
       height: 3.75em;
     }
 
-    .labels p {
+    .labels th {
       background: #032f4f;
       text-transform: uppercase;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       flex: 1;
       color: #fff;
       margin: 0;
+      box-sizing: border-box;
     }
 
-    .labels p:first-child {
+    .labels th:first-child {
       padding-left: 1em;
-    }
-
-    .labels p:nth-child(2) {
-      text-align: right;
-    }
-
-    .labels p:nth-child(3) {
-      padding-left: 1em;
+      box-sizing: padding-box;
     }
 
     .rosterMain {
@@ -335,22 +347,21 @@ a:hover {
       background: #f3f4f5;
     } 
 
-    .playerCell p {
+    .playerCell td {
       flex: 1;
       margin: 1em 0;
     }
 
-    .playerCell p:nth-child(2) {
-      text-align: right;
-      margin-right: 1em;
+    .playerCell td:first-child {
+      padding-left: 1em;
     }
 
-    .playerCell p:nth-child(3) {
+    .playerCell td:nth-child(3) {
       align-self: flex-start;
       justify-content: flex-start;
     }
 
-    .playerCell p:last-child {
+    .playerCell td:last-child {
       align-items: flex-start;
     }
 
@@ -358,7 +369,6 @@ a:hover {
       flex: 1;
       align-items: flex-start;
       margin: 1em 0;
-      padding-left: 1em;
       text-decoration: none;
       color: #1570b5;
     }
@@ -553,7 +563,69 @@ a:hover {
     MEDIA QUERIES
 ************************/
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
+
+  .nav {
+    justify-content: center;
+  }
+
+  .teamsLink {
+    margin-left: 0;
+  }
+  
+  .rosterSection table {
+    overflow-x: scroll;
+  }
+
+  .playersHeader, .listSection h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 765px) {
+
+  /************************
+    /ALLTEAMS MEDIA QUERIES
+  ************************/
+
+  .easternConfContainer, .westernConfContainer {
+    flex-wrap: wrap;
+  }
+
+  .confName {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .easternConfTeams, .westernConfTeams {
+    flex-wrap: wrap;
+  }
+
+  .easternConfTeams div, .westernConfTeams div {
+    min-width: 220px;
+  }
+
+  .easternConfTeams div h3, .westernConfTeams div h3 {
+    text-align: center;
+  }
+
+  /************************
+    /TEAM MEDIA QUERIES
+  ************************/
+
+  .teamStats {
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    min-width: 115px;
+  }
+  
+  /************************
+    /PLAYER MEDIA QUERIES
+  ************************/  
 
   .playerInfo {
     flex-direction: column;
@@ -585,6 +657,10 @@ a:hover {
 }
 
 @media screen and (max-width: 560px) {
+
+  .easternConfTeams div ul, .westernConfTeams div ul {
+    text-align: center;
+  }
 
   .playerImage {
     width: 195px;
