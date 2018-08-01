@@ -30,4 +30,4 @@ app.get('/', (req, res) => {
   res.redirect('/api/allTeams');
 })
 
-app.listen(3000, () => console.log('NBA Stats listening on port 3000! :)'));
+app.listen(process.env.PORT || 5000);
