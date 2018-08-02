@@ -15,27 +15,30 @@ a:hover {
 
 .header {
   text-align: center;
+  background: #1D428A;
+  color: #fff;
 }
 
 .nav {
   display: flex;
   background: #f3f4f5;
+  color: #061d2c;
   justify-content: center;
-  margin-bottom: 2em;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .nav a {
   font-size: 1.25em;
-  color: #000;
+  color: #061d2c;
   padding: .85em .5em;
   text-decoration: none;
 } 
 
-.nav a:visited {
-  color: #000;
+.nav a:visited, .footer a:visited {
+  color: #061d2c;
 }
 
-.nav a:hover {
+.nav a:hover, .footer a:hover {
   text-decoration: underline;
 }
 
@@ -45,8 +48,17 @@ a:hover {
   align-items: center;
 }
 
-.footer p {
+.footer a {
+  color: #061d2c;
   margin-left: .25em;
+  text-decoration: none;
+}
+
+@-moz-document url-prefix() {
+  table {
+    table-layout: auto;
+    width: 100%;
+  }
 }
 
 /************************
@@ -656,6 +668,16 @@ a:hover {
 }
 
 @media screen and (max-width: 560px) {
+
+  @-moz-document url-prefix() {
+    .teamName {
+      margin-left: .5em;
+    }
+
+    .established {
+      margin-left: .75em;
+    }
+  }
 
   .easternConfTeams div ul, .westernConfTeams div ul {
     text-align: center;
