@@ -29,11 +29,7 @@ a:hover {
   color: #000;
   padding: .85em .5em;
   text-decoration: none;
-}
-
-.teamsLink {
-  margin-left: 1.25em;
-}
+} 
 
 .nav a:visited {
   color: #000;
