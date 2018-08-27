@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
           teamStats: teamStats,
           roster: roster,
           standings: teamStandings,
-          team: teamData
+          teamData: teamData
         });
       }      
     });
