@@ -7,7 +7,6 @@ block content
   - var teamName = team.city + ' ' + team.name;
   - var minutes = Math.round(parseInt(stats.miscellaneous.minSeconds) / 60);
   - var minutesPerGame = Math.round(parseInt(stats.miscellaneous.minSecondsPerGame) / 60);
-  - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
   - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
   - var teamImageUrl = 'url(' + team.image + ')';
   if player.college
@@ -47,7 +46,7 @@ block content
           p #{player.age}
         div.cell
           p BORN 
-          p=bDay
+          p #{player.birthDate}
       div.pastInfo 
         div.cell
           p PRIOR

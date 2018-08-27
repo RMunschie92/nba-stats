@@ -12,7 +12,7 @@ const apiKey = "73a08190-f41f-4bda-becd-af5c5a";
 
 router.get('/:id', (req, res) => {
   let urls = [
-    `https://api.mysportsfeeds.com/v2.0/pull/nba/players.json?date=${date}&team=${req.params.id}`, 
+    `https://api.mysportsfeeds.com/v2.0/pull/nba/players.json?team=${req.params.id}`, 
     `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/team_stats_totals.json?team=${req.params.id}`,
     `https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json?team=${req.params.id}`
   ];
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   let completedRequests = 0;
   let responses = [];
   let roster = [];
-  let teamName;
+  let teamData;
 
   urls.forEach((url) => {
     let body = "";

@@ -54,7 +54,6 @@ block content
           th school
         each player in roster 
           if player.jerseyNumber !== null 
-            - var bDay = player.birthDate.substring(0, player.birthDate.length - 1);
             - var fullName = player.firstName + ' ' + player.lastName
             - var trimWords = ['University', 'university', 'College', 'college,',  'Of', 'of'];
             if player.college
@@ -66,7 +65,7 @@ block content
               td= player.position
               td= player.height 
               td= player.weight 
-              td= bDay
+              td= player.birthDate
               td= player.age 
               if player.college 
                 td.rosterCollege=college
